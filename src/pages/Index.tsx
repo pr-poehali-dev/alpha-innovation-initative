@@ -696,16 +696,16 @@ export default function Index() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-          <a href="#история" className="text-white/80 hover:text-white transition-colors text-sm lg:text-base">
+          <a href="#history" className="text-white/80 hover:text-white transition-colors text-sm lg:text-base">
             История
           </a>
-          <a href="#первая-война" className="text-white/80 hover:text-white transition-colors text-sm lg:text-base">
+          <a href="#war1" className="text-white/80 hover:text-white transition-colors text-sm lg:text-base">
             Первая война
           </a>
-          <a href="#вторая-война" className="text-white/80 hover:text-white transition-colors text-sm lg:text-base">
+          <a href="#war2" className="text-white/80 hover:text-white transition-colors text-sm lg:text-base">
             Вторая война
           </a>
-          <a href="#материалы" className="text-white/80 hover:text-white transition-colors text-sm lg:text-base">
+          <a href="#materials" className="text-white/80 hover:text-white transition-colors text-sm lg:text-base">
             Материалы
           </a>
         </nav>
@@ -723,16 +723,16 @@ export default function Index() {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-sm border-b border-white/10 z-20">
           <nav className="flex flex-col space-y-4 px-6 py-6">
-            <a href="#история" className="text-white/80 hover:text-white transition-colors">
+            <a href="#history" className="text-white/80 hover:text-white transition-colors">
               История
             </a>
-            <a href="#первая-война" className="text-white/80 hover:text-white transition-colors">
+            <a href="#war1" className="text-white/80 hover:text-white transition-colors">
               Первая война
             </a>
-            <a href="#вторая-война" className="text-white/80 hover:text-white transition-colors">
+            <a href="#war2" className="text-white/80 hover:text-white transition-colors">
               Вторая война
             </a>
-            <a href="#материалы" className="text-white/80 hover:text-white transition-colors">
+            <a href="#materials" className="text-white/80 hover:text-white transition-colors">
               Материалы
             </a>
             <ShimmerButton className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-xl text-sm font-medium shadow-lg w-fit">
@@ -761,7 +761,7 @@ export default function Index() {
 
         <Button
           className="group relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base md:text-xs lg:text-lg font-semibold flex items-center gap-2 backdrop-blur-sm border border-orange-400/30 shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
-          onClick={() => document.getElementById("история")?.scrollIntoView({ behavior: "smooth" })}
+          onClick={() => document.getElementById("history")?.scrollIntoView({ behavior: "smooth" })}
         >
           Изучить материалы
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-rotate-12 transition-transform duration-300" />
@@ -770,7 +770,7 @@ export default function Index() {
       </main>
 
       {/* Раздел: Введение */}
-      <section id="история" className="bg-zinc-950 py-20 px-6 sm:px-12 lg:px-24">
+      <section id="history" className="bg-zinc-950 py-20 px-6 sm:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-white text-3xl sm:text-4xl font-bold mb-6">О конфликтах</h2>
           <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-6">
@@ -845,7 +845,7 @@ export default function Index() {
       </section>
 
       {/* Первая война */}
-      <section id="первая-война" className="bg-zinc-950 py-20 px-6 sm:px-12 lg:px-24">
+      <section id="war1" className="bg-zinc-950 py-20 px-6 sm:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">Первая чеченская война <span className="text-orange-500">1994–1996</span></h2>
           <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-5">
@@ -886,7 +886,7 @@ export default function Index() {
       </section>
 
       {/* Вторая война */}
-      <section id="вторая-война" className="bg-black py-20 px-6 sm:px-12 lg:px-24">
+      <section id="war2" className="bg-black py-20 px-6 sm:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">Вторая чеченская война <span className="text-orange-500">1999–2009</span></h2>
           <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-5">
@@ -927,7 +927,7 @@ export default function Index() {
       </section>
 
       {/* Материалы */}
-      <section id="материалы" className="bg-zinc-950 py-20 px-6 sm:px-12 lg:px-24">
+      <section id="materials" className="bg-zinc-950 py-20 px-6 sm:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-white text-3xl sm:text-4xl font-bold mb-12">Материалы для изучения</h2>
 
