@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Menu } from "lucide-react"
+import { ArrowRight, Menu, ChevronRight } from "lucide-react"
 import { LineShadowText } from "@/components/line-shadow-text"
 import { ShimmerButton } from "@/components/shimmer-button"
 import { useState } from "react"
+import Icon from "@/components/ui/icon"
 
 export default function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -758,12 +759,177 @@ export default function Index() {
           Статьи, документальные фильмы и архивные материалы.
         </p>
 
-        <Button className="group relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base md:text-xs lg:text-lg font-semibold flex items-center gap-2 backdrop-blur-sm border border-orange-400/30 shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5">
+        <Button
+          className="group relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base md:text-xs lg:text-lg font-semibold flex items-center gap-2 backdrop-blur-sm border border-orange-400/30 shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+          onClick={() => document.getElementById("история")?.scrollIntoView({ behavior: "smooth" })}
+        >
           Изучить материалы
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-rotate-12 transition-transform duration-300" />
           <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </Button>
       </main>
+
+      {/* Раздел: Введение */}
+      <section id="история" className="bg-zinc-950 py-20 px-6 sm:px-12 lg:px-24">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-white text-3xl sm:text-4xl font-bold mb-6">О конфликтах</h2>
+          <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-6">
+            Чеченские войны — два крупных вооружённых конфликта между Россией и Чечнёй, произошедших в конце XX — начале XXI века. Они стали одними из наиболее масштабных военных кампаний постсоветского пространства и оказали огромное влияние на политическую и социальную жизнь страны.
+          </p>
+          <p className="text-white/60 text-base sm:text-lg leading-relaxed">
+            На этом сайте собраны образовательные материалы: хронология событий, статьи историков и журналистов, документальные фильмы и архивные источники.
+          </p>
+        </div>
+      </section>
+
+      {/* Хронология */}
+      <section className="bg-black py-20 px-6 sm:px-12 lg:px-24">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-3 mb-12">
+            <Icon name="Clock" size={28} className="text-orange-500" />
+            <h2 className="text-white text-3xl sm:text-4xl font-bold">Хронология</h2>
+          </div>
+          <div className="relative border-l-2 border-orange-500/40 pl-8 space-y-10">
+            {[
+              { year: "1991", text: "Чечня провозглашает независимость от СССР под руководством Джохара Дудаева." },
+              { year: "Дек 1994", text: "Российские войска входят в Чечню — начало Первой чеченской войны." },
+              { year: "Янв 1995", text: "Штурм Грозного. Одна из самых кровопролитных городских битв в Европе после Второй мировой войны." },
+              { year: "Авг 1996", text: "Хасавюртовские соглашения. Россия выводит войска, де-факто признавая поражение." },
+              { year: "Авг 1999", text: "Вторжение боевиков в Дагестан. Начало Второй чеченской войны." },
+              { year: "2000", text: "Федеральные силы устанавливают контроль над большей частью республики." },
+              { year: "2009", text: "Россия официально прекращает «контртеррористическую операцию» в Чечне." },
+            ].map((item, i) => (
+              <div key={i} className="relative">
+                <div className="absolute -left-[2.65rem] top-1 w-4 h-4 rounded-full bg-orange-500 border-2 border-black" />
+                <span className="text-orange-400 font-bold text-sm uppercase tracking-wider">{item.year}</span>
+                <p className="text-white/70 mt-1 text-base">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Первая война */}
+      <section id="первая-война" className="bg-zinc-950 py-20 px-6 sm:px-12 lg:px-24">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">Первая чеченская война <span className="text-orange-500">1994–1996</span></h2>
+          <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8">
+            Вооружённый конфликт между Россией и Чечнёй, начавшийся в декабре 1994 года. Российская армия с трудом продвигалась в условиях городской войны. Потери с обеих сторон были огромными. Война завершилась Хасавюртовскими соглашениями в 1996 году и выводом федеральных войск.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              { label: "Длительность", value: "21 месяц" },
+              { label: "Потери России (оценочно)", value: "~6 000 чел." },
+              { label: "Итог", value: "Хасавюртовские соглашения" },
+            ].map((s, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5">
+                <div className="text-orange-400 text-xs uppercase tracking-wider mb-1">{s.label}</div>
+                <div className="text-white font-semibold text-lg">{s.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Вторая война */}
+      <section id="вторая-война" className="bg-black py-20 px-6 sm:px-12 lg:px-24">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">Вторая чеченская война <span className="text-orange-500">1999–2009</span></h2>
+          <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8">
+            Началась после вторжения вооружённых формирований в Дагестан и серии взрывов жилых домов в России. Федеральные силы провели масштабную операцию, установив контроль над республикой к 2000 году. Официально война завершилась в 2009 году снятием режима КТО.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              { label: "Длительность", value: "10 лет" },
+              { label: "Потери России (оценочно)", value: "~7 000 чел." },
+              { label: "Итог", value: "Установление федерального контроля" },
+            ].map((s, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5">
+                <div className="text-orange-400 text-xs uppercase tracking-wider mb-1">{s.label}</div>
+                <div className="text-white font-semibold text-lg">{s.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Материалы */}
+      <section id="материалы" className="bg-zinc-950 py-20 px-6 sm:px-12 lg:px-24">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-white text-3xl sm:text-4xl font-bold mb-12">Материалы для изучения</h2>
+
+          {/* Статьи */}
+          <div className="mb-14">
+            <div className="flex items-center gap-2 mb-6">
+              <Icon name="BookOpen" size={22} className="text-orange-500" />
+              <h3 className="text-white text-xl font-semibold">Статьи и тексты</h3>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { title: "Первая чеченская война — Википедия", url: "https://ru.wikipedia.org/wiki/Первая_чеченская_война", desc: "Подробная энциклопедическая статья о событиях 1994–1996 гг." },
+                { title: "Вторая чеченская война — Википедия", url: "https://ru.wikipedia.org/wiki/Вторая_чеченская_война", desc: "Полная хронология и участники конфликта 1999–2009 гг." },
+                { title: "Штурм Грозного (1994–1995) — Википедия", url: "https://ru.wikipedia.org/wiki/Штурм_Грозного_(1994—1995)", desc: "Городские бои за столицу Чечни в начале войны." },
+                { title: "Хасавюртовские соглашения — Википедия", url: "https://ru.wikipedia.org/wiki/Хасавюртовские_соглашения", desc: "Мирный договор, завершивший Первую чеченскую войну." },
+                { title: "Чеченский конфликт — Britannica (англ.)", url: "https://www.britannica.com/event/First-Chechen-War", desc: "Международный взгляд на конфликт от энциклопедии Britannica." },
+                { title: "История Чечни — Мемориал", url: "https://www.memo.ru/", desc: "Правозащитный центр «Мемориал» — архивные документы и свидетельства." },
+              ].map((a, i) => (
+                <a
+                  key={i}
+                  href={a.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-orange-500/40 rounded-xl p-5 transition-all duration-200 flex flex-col gap-2"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="text-white font-medium group-hover:text-orange-400 transition-colors">{a.title}</span>
+                    <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-orange-500 shrink-0 mt-0.5 transition-colors" />
+                  </div>
+                  <span className="text-white/50 text-sm">{a.desc}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Видео */}
+          <div>
+            <div className="flex items-center gap-2 mb-6">
+              <Icon name="Video" size={22} className="text-orange-500" />
+              <h3 className="text-white text-xl font-semibold">Документальные фильмы и видео</h3>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { title: "«Чечня. Год третий» — Россия 1", url: "https://www.youtube.com/results?search_query=чеченская+война+документальный+фильм", desc: "Документальные материалы о ходе войны." },
+                { title: "«Потерянный взвод» — НТВ", url: "https://www.youtube.com/results?search_query=потерянный+взвод+чечня+нтв", desc: "Документальный репортаж о судьбах солдат." },
+                { title: "«Война в Чечне» — ВГТРК Архив", url: "https://www.youtube.com/results?search_query=война+чечня+архив+1995", desc: "Архивные съёмки 1994–1996 годов." },
+                { title: "«Вторая чеченская» — поиск на YouTube", url: "https://www.youtube.com/results?search_query=вторая+чеченская+война+документальный", desc: "Подборка документальных фильмов о событиях 1999–2009 гг." },
+              ].map((v, i) => (
+                <a
+                  key={i}
+                  href={v.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-orange-500/40 rounded-xl p-5 transition-all duration-200 flex flex-col gap-2"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="text-white font-medium group-hover:text-orange-400 transition-colors">{v.title}</span>
+                    <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-orange-500 shrink-0 mt-0.5 transition-colors" />
+                  </div>
+                  <span className="text-white/50 text-sm">{v.desc}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Футер */}
+      <footer className="bg-black border-t border-white/10 py-10 px-6 sm:px-12 lg:px-24">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span className="text-white font-bold text-lg">ЧеченскиеВойны.рф</span>
+          <span className="text-white/40 text-sm text-center">Образовательный проект. Все материалы собраны из открытых источников.</span>
+          <span className="text-white/30 text-sm">2024</span>
+        </div>
+      </footer>
     </div>
   )
 }
